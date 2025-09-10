@@ -55,11 +55,11 @@ async function getApiKey() {
             throw new Error("La chiave API non è stata fornita dal backend.");
         }
         
-        console.log("✅ Chiave API recuperata con successo.");
+        console.log("Chiave API recuperata con successo.");
         return config.apiKey;
         
     } catch (error) {
-        console.error("🚨 Errore nel recupero della chiave API:", error);
+        console.error("Errore nel recupero della chiave API:", error);
         
         // Mostra errore all'utente
         showError("Impossibile connettersi al sistema", 
@@ -72,7 +72,7 @@ async function getApiKey() {
  * Carica i dati delle allerte dal backend
  */
 async function loadAlertsData() {
-    console.log('📥 Caricamento dati allerte...');
+    console.log('Caricamento dati allerte...');
     
     try {
         // Prima prova l'endpoint API
@@ -80,11 +80,11 @@ async function loadAlertsData() {
         
         if (response.ok) {
             const data = await response.json();
-            console.log('✅ Dati caricati dall\'API');
+            console.log('Dati caricati dall\'API');
             return data;
         }
     } catch (error) {
-        console.warn('⚠️ API non disponibile, provo percorsi locali...');
+        console.warn('API non disponibile, provo percorsi locali...');
     }
     
     // Fallback: prova percorsi locali
@@ -108,7 +108,7 @@ async function loadAlertsData() {
     }
     
     // Se tutto fallisce, usa dati demo
-    console.warn('📊 Usando dati demo di fallback');
+    console.warn('Usando dati demo di fallback');
     return getDemoData();
 }
 
@@ -128,7 +128,7 @@ function showError(title, message) {
  * Inizializza la mappa
  */
 function initMap() {
-    console.log('🗺️ Inizializzazione mappa...');
+    console.log('Inizializzazione mappa...');
     
     app.map = new Map({
         basemap: CONFIG.map.basemap
@@ -157,11 +157,11 @@ function initMap() {
         nextBasemap: "arcgis-imagery" 
     });
 
-    app.view.ui.add(searchWidget, "top-left");
+    app.view.ui.add(searchWidget, "top-right");
     app.view.ui.add(basemapToggle, "bottom-right");
 
     app.view.when(() => {
-        console.log('✅ Mappa pronta');
+        console.log('Mappa pronta');
         main();
     });
 }
@@ -170,18 +170,17 @@ function initMap() {
  * Funzione principale
  */
 async function main() {
-    console.log('🚀 Avvio applicazione principale...');
+    console.log('Avvio applicazione principale...');
     
     try {
         setupEventListeners();
         await loadAndDisplayData();
         closeLoadingModal();
         
-        // Mostra stato connessione
         updateConnectionStatus(true);
         
     } catch (error) {
-        console.error('❌ Errore nel caricamento:', error);
+        console.error('Errore nel caricamento:', error);
         closeLoadingModal();
         updateConnectionStatus(false);
     }
