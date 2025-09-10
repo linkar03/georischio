@@ -1,0 +1,80 @@
+#variabili di ambiente
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# progetto
+logs/
+*.log
+
+# mantiene struttura, non dati
+data/raw/*.json
+data/raw/*.geojson
+data/raw/*.tif
+data/raw/*.zip
+data/processed/*.json
+data/processed/*.geojson
+data/predictions/*.json
+data/predictions/*.geojson
+
+# Mantengo i dati del frontend per il demo
+!frontend/data/.gitkeep
+
+# modelli da non pushare perchè possono diventare pesanti
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# Reports generati
+reports/*.html
+reports/*.pdf
+
+# files temporanei
+*.tmp
+*.bak
+*~
+.cache/
+
+# Docker
+*.pid
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Distribuzione
+build/
+dist/
+*.egg-info/
+*.egg
