@@ -75,3 +75,12 @@ models/              # Modelli ML salvati
 -Validazione con eventi storici
 -Heatmap e visualizzazioni 3D 
 -Miglioramenti best practices di sicurezza
+
+
+![Screenshot dell'applicazione in funzione](docs/demo.png)
+
+Una demo live è disponibile al link 
+
+https://georischio.onrender.com
+
+Il deploy è stato effettuato tramite il servizio offerto gratuitamente da Render, quindi è necessario attendere per il caricamento qualora il link fosse "addormentato"
