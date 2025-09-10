@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georisk Sentinel Lombardia - Sistema di Monitoraggio Rischio Idrogeologico</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    
+    <script type="module" src="https://js.arcgis.com/calcite-components/2.4.0/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.4.0/calcite.css">
+    
+    <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@arcgis/core/": "https://js.arcgis.com/4.29/@arcgis/core/",
+        "esri/": "https://js.arcgis.com/4.29/esri/"
+      }
+    }
+    </script>
+
+</head>
+<body>
+    <calcite-shell>
+        <calcite-navigation slot="header">
+            <calcite-navigation-logo 
+                slot="logo" 
+                heading="Georisk Sentinel Lombardia"
+                description="Sistema di Monitoraggio Rischio Idrogeologico">
+            </calcite-navigation-logo>
+            
+            <calcite-action-pad slot="content-end" layout="horizontal">
+                <!-- pulsante per aggiornare i dati non funzionale con dati sintetici
+                <calcite-action 
+                    id="btn-aggiorna" 
+                    icon="refresh" 
+                    text="Aggiorna Dati">
+                </calcite-action> -->
+                <calcite-action 
+                    id="btn-info" 
+                    icon="information" 
+                    text="Info Sistema">
+                </calcite-action>
+            </calcite-action-pad>
+        </calcite-navigation>
+
+        <calcite-shell-panel slot="panel-start" display-mode="float" width-scale="m">
+            <calcite-panel heading="Controlli Visualizzazione">
+                <calcite-block heading="Filtra per Livello Allerta" open>
+                    <calcite-segmented-control id="filtro-livello" layout="vertical">
+                        <calcite-segmented-control-item value="tutti" checked>
+                            Tutti
+                        </calcite-segmented-control-item>
+                        <calcite-segmented-control-item value="critici">
+                            Critici
+                        </calcite-segmented-control-item>
+                        <calcite-segmented-control-item value="ROSSO">
+                             Solo Rossi (>70%)
+                        </calcite-segmented-control-item>
+                        <calcite-segmented-control-item value="ARANCIONE">
+                             Solo Arancioni (>50%)
+                        </calcite-segmented-control-item>
+                        <calcite-segmented-control-item value="GIALLO">
+                            Solo Gialli (>30%)
+                       </calcite-segmented-control-item>
+                    </calcite-segmented-control>
+                </calcite-block>
+
+                </calcite-panel>
+        </calcite-shell-panel>
+
+        <div id="mappa-principale"></div>
+
+        <calcite-shell-panel slot="panel-end" display-mode="float" width-scale="m">
+            <calcite-panel heading="Aree Critiche (Top 5)">
+                <calcite-list id="lista-aree-critiche">
+                    <calcite-notice open icon="information">
+                        <div slot="message">Caricamento aree critiche..</div>
+                    </calcite-notice>
+                </calcite-list>
+            </calcite-panel>
+        </calcite-shell-panel>
+    </calcite-shell>
+
+    <div id="demo-chip-container">
+        <calcite-chip id="stato-connessione" kind="neutral">
+            Demo
+        </calcite-chip>
+    </div>
+
+
+    <calcite-modal id="modal-caricamento" open>
+        <div slot="header">Inizializzazione Sistema</div>
+        <div slot="content">
+            <calcite-loader label="Caricamento" text="Caricamento dati.."></calcite-loader>
+            <p id="stato-caricamento">Connessione al sistema..</p>
+        </div>
+    </calcite-modal>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

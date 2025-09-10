@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Training Report - 2025-09-09 15:38</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .metric {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Report Training Modello ML</h1>
+        <p><strong>Data:</strong> 2025-09-09 15:38</p>
+        <p><strong>Tipo Modello:</strong> XGBOOST</p>
+
+        <h2>Metriche di Performance</h2>
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">R² Score</div>
+                <div class="metric-value">0.050</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">RMSE</div>
+                <div class="metric-value">27.64</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">MAE</div>
+                <div class="metric-value">22.20</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Training Samples</div>
+                <div class="metric-value">17</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Test Samples</div>
+                <div class="metric-value">5</div>
+            </div>
+        </div>
+
+        
+        <h2>Top 10 Feature Importance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Importance</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>precip_1d_past</td>
+                    <td>0.5339</td>
+                </tr>
+                
+                <tr>
+                    <td>longitude</td>
+                    <td>0.4112</td>
+                </tr>
+                
+                <tr>
+                    <td>precip_3d_forecast</td>
+                    <td>0.0465</td>
+                </tr>
+                
+                <tr>
+                    <td>month</td>
+                    <td>0.0040</td>
+                </tr>
+                
+                <tr>
+                    <td>elevation_mean</td>
+                    <td>0.0035</td>
+                </tr>
+                
+                <tr>
+                    <td>precip_7d_past</td>
+                    <td>0.0008</td>
+                </tr>
+                
+                <tr>
+                    <td>day_of_year</td>
+                    <td>0.0001</td>
+                </tr>
+                
+                <tr>
+                    <td>elevation_std</td>
+                    <td>0.0000</td>
+                </tr>
+                
+                <tr>
+                    <td>roughness</td>
+                    <td>0.0000</td>
+                </tr>
+                
+                <tr>
+                    <td>slope_mean</td>
+                    <td>0.0000</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>

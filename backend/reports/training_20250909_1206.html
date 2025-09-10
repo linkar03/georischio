@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Report di Training - Georisk Sentinel</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; background: #f4f4f9; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #4a4a4a; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f8f8f8; }
+        .metric-value { font-weight: bold; font-family: monospace; }
+        .r2-bad { color: #d9534f; }
+        .r2-ok { color: #f0ad4e; }
+        .r2-good { color: #5cb85c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Report di Training del Modello</h1>
+        <p><strong>Generato il:</strong> 2025-09-09 12:06</p>
+        <p><strong>Tipo di Modello:</strong> XGBOOST</p>
+
+        <h2>📈 Metriche di Performance (su Test Set)</h2>
+        <table>
+            <tr>
+                <th>Metrica</th>
+                <th>Valore</th>
+            </tr>
+            <tr>
+                <td>R-squared (R²)</td>
+                <td class="metric-value 
+                    r2-bad">
+                    -1.937
+                </td>
+            </tr>
+            <tr>
+                <td>Root Mean Squared Error (RMSE)</td>
+                <td class="metric-value">34.28</td>
+            </tr>
+            <tr>
+                <td>Mean Absolute Error (MAE)</td>
+                <td class="metric-value">27.84</td>
+            </tr>
+        </table>
+
+        <h2>📚 Dettagli del Dataset</h2>
+        <table>
+            <tr><td>Campioni di Training</td><td class="metric-value">6</td></tr>
+            <tr><td>Campioni di Test</td><td class="metric-value">2</td></tr>
+            <tr><td>Numero di Feature</td><td class="metric-value">12</td></tr>
+        </table>
+        
+        <h2>⭐ Feature più Importanti</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Importanza</th>
+            </tr>
+            
+            <tr>
+                <td>longitude</td>
+                <td class="metric-value">0.4502</td>
+            </tr>
+            
+            <tr>
+                <td>precip_1d_past</td>
+                <td class="metric-value">0.4246</td>
+            </tr>
+            
+            <tr>
+                <td>month</td>
+                <td class="metric-value">0.1007</td>
+            </tr>
+            
+            <tr>
+                <td>precip_7d_past</td>
+                <td class="metric-value">0.0183</td>
+            </tr>
+            
+            <tr>
+                <td>elevation_mean</td>
+                <td class="metric-value">0.0063</td>
+            </tr>
+            
+            <tr>
+                <td>precip_3d_forecast</td>
+                <td class="metric-value">0.0000</td>
+            </tr>
+            
+            <tr>
+                <td>elevation_std</td>
+                <td class="metric-value">0.0000</td>
+            </tr>
+            
+            <tr>
+                <td>slope_mean</td>
+                <td class="metric-value">0.0000</td>
+            </tr>
+            
+            <tr>
+                <td>roughness</td>
+                <td class="metric-value">0.0000</td>
+            </tr>
+            
+            <tr>
+                <td>precip_3d_past</td>
+                <td class="metric-value">0.0000</td>
+            </tr>
+            
+        </table>
+    </div>
+</body>
+</html>

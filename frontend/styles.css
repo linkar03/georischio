@@ -1,0 +1,129 @@
+
+/*tema e variabili globali*/
+:root {
+    /* Colori primari*/
+    --brand-primary: #667eea;
+    --brand-secondary: #764ba2;
+    --brand-gradient: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+
+    /* Colori del testo */
+    --text-color-dark: #151515;
+    --text-color-medium: #4a4a4a;
+    --text-color-light: #6a6a6a;
+    --text-color-inverted: #ffffff;
+
+    /* Sfondi */
+    --background-light: #ffffff;
+    --background-medium: #f8f8f8;
+    --background-dark: #f0f0f0;
+
+    /* Bordi */
+    --border-color-strong: #dfdfdf;
+    --border-color-soft: #efefef;
+}
+
+
+/* Header principale */
+calcite-navigation {
+    background: var(--brand-gradient);
+    color: var(--text-color-inverted);
+}
+
+calcite-navigation-logo {
+    color: var(--text-color-inverted); 
+}
+
+/* Pannelli laterali */
+calcite-shell-panel {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Blocchi di contenuto dentro i pannelli */
+calcite-block {
+    background-color: var(--background-medium);
+    border: 1px solid var(--border-color-soft);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+calcite-panel[slot="footer"] {
+    background-color: var(--background-medium);
+    border-top: 1px solid var(--border-color-strong);
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* Stili widget*/
+
+/* Filtro a segmenti */
+#filtro-livello calcite-segmented-control-item[checked] {
+    background: var(--brand-gradient);
+    color: var(--text-color-inverted);
+    font-weight: bold;
+}
+
+
+/* Lista aree critiche */
+#lista-aree-critiche calcite-list-item {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+#lista-aree-critiche calcite-list-item:hover {
+    background-color: var(--background-dark);
+    border-left: 3px solid var(--brand-primary);
+    transform: translateX(5px);
+}
+
+/* Action buttons nell'header */
+calcite-action-pad[slot="content-end"] calcite-action {
+    color: var(--brand-primary);
+    background-color: var(--background-light);
+}
+
+calcite-action-pad[slot="content-end"] calcite-action:hover {
+    color: var(--text-color-inverted);
+    background-color: var(--brand-primary);
+}
+
+
+/* Layout*/
+#mappa-principale {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#modal-caricamento [slot="content"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Stili per il chip "Demo con Dati Sintetici"*/
+#demo-chip-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000; 
+}
+
+#stato-connessione {
+    background-color: var(--background-dark); 
+    color: var(--text-color-light); 
+    border: 1px solid var(--border-color-soft);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --calcite-chip-background: var(--background-dark); 
+    --calcite-chip-text-color: var(--text-color-light); 
+}

@@ -1,0 +1,33 @@
+# librerie data science
+pandas
+numpy
+scipy
+jinja2
+
+# librerie geospaziali
+geopandas
+rasterio
+shapely
+
+# Modelli ML
+scikit-learn
+xgboost
+joblib
+
+# APIs and Utilities
+requests
+python-dotenv
+pydantic
+
+# dati copernicus reali eventualmente
+cdsapi
+xarray
+
+# Sviluppo 
+pytest
+black
+ruff
+
+#framework web
+flask
+flask-cors

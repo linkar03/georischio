@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Training Report - {{ timestamp }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .metric {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Report Training Modello ML</h1>
+        <p><strong>Data:</strong> {{ timestamp }}</p>
+        <p><strong>Tipo Modello:</strong> {{ model_type }}</p>
+
+        <h2>Metriche di Performance</h2>
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">R² Score</div>
+                <div class="metric-value">{{ "%.3f"|format(metrics.test_r2) }}</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">RMSE</div>
+                <div class="metric-value">{{ "%.2f"|format(metrics.test_rmse) }}</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">MAE</div>
+                <div class="metric-value">{{ "%.2f"|format(metrics.test_mae) }}</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Training Samples</div>
+                <div class="metric-value">{{ metrics.training_samples }}</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Test Samples</div>
+                <div class="metric-value">{{ metrics.test_samples }}</div>
+            </div>
+        </div>
+
+        {% if features %}
+        <h2>Top 10 Feature Importance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Importance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feature in features %}
+                <tr>
+                    <td>{{ feature.feature }}</td>
+                    <td>{{ "%.4f"|format(feature.importance) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+  {
+    "project_paths": {
+      "raw_data": "data/raw",
+      "processed_data": "data/processed",
+      "predictions": "data/predictions",
+      "models": "models",
+      "logs": "logs",
+      "reports": "reports",
+      "frontend_data": "frontend/data",
+      "model_artifact": "models/georisk_predictor.pkl",
+      "templates_dir": "templates"
+    },
+    "pipeline_params": {
+      "auto_retrain_days": 30
+    },
+    "data_ingestion": {
+      "cache_duration_days": 7,
+      "endpoints": {
+        "ispra_wfs": "https://idrogeo.isprambiente.it/geoserver/idrogeo/wfs",
+        "copernicus_dem_tile_url": "https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/E40N20.zip"
+      },
+      "wfs_params": {
+        "iffi_lombardia": {
+          "service": "WFS",
+          "version": "1.1.0",
+          "request": "GetFeature",
+          "typeName": "idrogeo:frane_iffi",
+          "outputFormat": "application/json",
+          "srsName": "EPSG:4326",
+          "CQL_FILTER": "cod_reg = '03'"
+        }
+      }
+    },
+    "ml_params": {
+      "feature_engineering": {
+        "terrain_buffer_radius_m": 500,
+        "weather_past_days": 7,
+        "weather_forecast_days": 3
+      },
+      "model": {
+        "type": "xgboost",
+        "test_size": 0.2,
+        "random_state": 42,
+        "model_params": {
+          "n_estimators": 100,
+          "max_depth": 5,
+          "learning_rate": 0.1
+        }
+      },
+      "prediction": {
+        "grid_resolution_deg": 0.15,
+        "min_risk_score_threshold": 40,
+        "lombardy_bounds": {
+          "lat_min": 45.4,
+          "lat_max": 46.6,
+          "lon_min": 8.5,
+          "lon_max": 11.4
+        }
+      }
+    },
+    "post_processing": {
+      "color_map": {
+        "ROSSO": "#ff4757", "ARANCIONE": "#ff9f43",
+        "GIALLO": "#ffd32c", "VERDE": "#26de81"
+      },
+      "capoluoghi_coords": {
+        "Milano":    [45.4642, 9.19, "MI"], "Bergamo":  [45.6983, 9.6773, "BG"],
+        "Brescia":   [45.5416, 10.2118,"BS"], "Como":     [45.8081, 9.0852, "CO"],
+        "Cremona":   [45.1332, 10.0227,"CR"], "Lecco":    [45.8566, 9.3976, "LC"],
+        "Lodi":      [45.3140, 9.502,  "LO"], "Mantova":  [45.1564, 10.7914,"MN"],
+        "Monza":     [45.5845, 9.2744, "MB"], "Pavia":    [45.1847, 9.1582, "PV"],
+        "Sondrio":   [46.1699, 9.8787, "SO"], "Varese":   [45.8206, 8.8251, "VA"]
+      }
+  }
+  }

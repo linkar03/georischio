@@ -1,0 +1,15 @@
+# Ignora le dipendenze locali e gli ambienti virtuali
+.venv
+venv
+__pycache__
+
+# Ignora file di configurazione locali
+.env
+*.pyc
+
+# Ignora la cache di Docker e i file di git
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml

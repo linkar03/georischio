@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: georisk-app
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./config.json:/app/config.json
+    env_file:
+      - ./backend/.env
+    environment:
+      - PYTHONPATH=/app
+      - FLASK_ENV=development
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5001/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  pipeline:
+    build: .
+    container_name: georisk-pipeline
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./config.json:/app/config.json
+    env_file:
+      - ./backend/.env
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    command: ["python", "backend/pipeline.py"]
+    profiles:
+      - pipeline  # Non parte automaticamente con `docker-compose up`
