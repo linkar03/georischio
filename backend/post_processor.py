@@ -30,7 +30,7 @@ class PredictionPostProcessor:
             logger.warning("Dati dei capoluoghi non trovati nella configurazione.")
 
     def _enrich_locations(self, gdf: gpd.GeoDataFrame) -> pd.DataFrame:
-        "Usa KDTree per trovare comune e provincia per tutti i punti in un colpo solo."
+        "Usa KDTree per trovare comune e provincia per tutti i punti insieme."
         if not self.kdtree or gdf.empty:
             return gdf.assign(comune="Unknown", provincia="N/A")
 
