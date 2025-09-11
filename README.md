@@ -18,7 +18,7 @@ Questo per:
 -- COSA FA --
 
 Predice il rischio di frane e allagamenti in aree sensibili in lombardia usando Machine Learning su:
-Eventi storici (fittizi nel POC)
+Eventi storici
 Dati terreno (DEM sintetico)
 Precipitazioni (simulate)
 
