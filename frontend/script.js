@@ -1,262 +1,189 @@
-// Import moduli ArcGIS
 import esriConfig from "@arcgis/core/config.js";
 import Map from "@arcgis/core/Map.js";
 import MapView from "@arcgis/core/views/MapView.js";
 import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
 import Graphic from "@arcgis/core/Graphic.js";
-import Point from "@arcgis/core/geometry/Point.js";
-import SimpleMarkerSymbol from "@arcgis/core/symbols/SimpleMarkerSymbol.js";
 import PopupTemplate from "@arcgis/core/PopupTemplate.js";
 import Search from "@arcgis/core/widgets/Search.js";
 import BasemapToggle from "@arcgis/core/widgets/BasemapToggle.js";
 
-// Configurazione
-const CONFIG = {
-    api: {
-        configEndpoint: '/api/config',
-        alertsEndpoint: '/api/alerts'
+// --- Costanti e Configurazione ---
+
+const CONSTANTS = {
+    API: {
+        CONFIG: '/api/config',
+        ALERTS: '/api/alerts'
     },
-    colors: {
+    ALERT_LEVELS: {
+        RED: 'ROSSO',
+        ORANGE: 'ARANCIONE',
+        YELLOW: 'GIALLO',
+        GREEN: 'VERDE'
+    },
+    FILTERS: {
+        ALL: 'tutti',
+        CRITICAL: 'critici'
+    },
+    COLORS: {
         ROSSO: [255, 71, 87],
         ARANCIONE: [255, 159, 67],
         GIALLO: [255, 211, 44],
         VERDE: [38, 222, 129]
-    },
-    map: {
-        basemap: "osm",
-        center: [9.8, 45.8],
-        zoom: 8
     }
 };
 
-// Stato dell'applicazione
+// --- Stato dell'Applicazione ---
 const app = {
     map: null,
     view: null,
     graphicsLayer: null,
-    data: null
+    alertsData: []
 };
 
-/**
- * Recupera la chiave API dal backend in modo sicuro
- */
+// --- Funzioni Helper ---
+
+
+const isCritical = (level) => [CONSTANTS.ALERT_LEVELS.RED, CONSTANTS.ALERT_LEVELS.ORANGE].includes(level);
+
+
+function getSymbolSize(riskScore) {
+    if (riskScore > 70) return 16;
+    if (riskScore > 50) return 13;
+    if (riskScore > 30) return 10;
+    return 8;
+}
+
+
+
+//Inizializza e avvia l'applicazione.
+async function initialize() {
+    document.addEventListener('calcitePanelScroll', event => event.stopPropagation());
+    const apiKey = await getApiKey();
+    if (apiKey) {
+        esriConfig.apiKey = apiKey;
+    }
+    initMap();
+    initUI();
+    await loadAndDisplayData();
+    closeLoadingModal();
+}
+
+
+//Inizializza la mappa e i suoi widget.
+function initMap() {
+    app.map = new Map({ basemap: "arcgis-topographic" });
+    app.view = new MapView({
+        container: "mappa-principale",
+        map: app.map,
+        center: [9.8, 45.8],
+        zoom: 8
+    });
+
+    app.graphicsLayer = new GraphicsLayer({ title: "Allerte Rischio Idrogeologico" });
+    app.map.add(app.graphicsLayer);
+
+    const search = new Search({ view: app.view, placeholder: "Cerca località..." });
+    const basemapToggle = new BasemapToggle({ view: app.view, nextBasemap: "arcgis-imagery" });
+    app.view.ui.add(search, "top-right");
+    app.view.ui.add(basemapToggle, "bottom-right");
+}
+
+
+//Imposta i gestori di eventi per l'interfaccia utente.
+
+function initUI() {
+    document.querySelector('#filtro-livello')?.addEventListener('calciteSegmentedControlChange', (event) => {
+        filterMapGraphics(event.target.value);
+    });
+
+    document.querySelector('#btn-info')?.addEventListener('click', () => {
+        alert('Georisk Sentinel Lombardia v2.1 - Sistema ML per Rischio Idrogeologico');
+    });
+}
+
+// Carica i dati delle allerte e aggiorna la UI.
+async function loadAndDisplayData() {
+    const data = await fetchAlerts();
+    if (data && data.alerts) {
+        app.alertsData = data.alerts;
+        displayAlertsOnMap(app.alertsData);
+        updateDashboard(app.alertsData);
+    } else {
+        console.warn('Nessun dato di allerta da visualizzare.');
+        updateDashboard([]);
+    }
+}
+
+// --- Funzioni di Interazione con l'API ---
+
 async function getApiKey() {
     try {
-        console.log('📡 Richiesta chiave API al backend...');
-        const response = await fetch(CONFIG.api.configEndpoint);
-        
-        if (!response.ok) {
-            throw new Error(`Errore dal server: ${response.status} ${response.statusText}`);
-        }
-        
+        const response = await fetch(CONSTANTS.API.CONFIG);
+        if (!response.ok) throw new Error(`Errore server: ${response.status}`);
         const config = await response.json();
-        
-        if (!config.apiKey) {
-            throw new Error("La chiave API non è stata fornita dal backend.");
-        }
-        
-        console.log("Chiave API recuperata con successo.");
         return config.apiKey;
-        
     } catch (error) {
+        showError("Impossibile caricare la configurazione dell'applicazione.");
         console.error("Errore nel recupero della chiave API:", error);
-        
-        // Mostra errore all'utente
-        showError("Impossibile connettersi al sistema", 
-                 "La chiave API non può essere caricata. Verifica che il server sia attivo.");
         return null;
     }
 }
 
-/**
- * Carica i dati delle allerte dal backend
- */
-async function loadAlertsData() {
-    console.log('Caricamento dati allerte...');
-    
+async function fetchAlerts() {
     try {
-        // Prima prova l'endpoint API
-        const response = await fetch(CONFIG.api.alertsEndpoint);
-        
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Dati caricati dall\'API');
-            return data;
-        }
+        const response = await fetch(CONSTANTS.API.ALERTS);
+        if (!response.ok) throw new Error('API allerte non raggiungibile');
+        return await response.json();
     } catch (error) {
-        console.warn('API non disponibile, provo percorsi locali...');
-    }
-    
-    // Fallback: prova percorsi locali
-    const fallbackPaths = [
-        './data/alerts_data.json',
-        '../data/alerts_data.json',
-        './frontend/data/alerts_data.json'
-    ];
-    
-    for (const path of fallbackPaths) {
-        try {
-            const response = await fetch(path);
-            if (response.ok) {
-                const data = await response.json();
-                console.log(`✅ Dati caricati da ${path}`);
-                return data;
-            }
-        } catch (e) {
-            console.warn(`File non trovato: ${path}`);
-        }
-    }
-    
-    // Se tutto fallisce, usa dati demo
-    console.warn('Usando dati demo di fallback');
-    return getDemoData();
-}
-
-/**
- * Mostra un messaggio di errore all'utente
- */
-function showError(title, message) {
-    document.body.innerHTML = `
-        <calcite-notice open kind="danger" icon="exclamation-triangle-f">
-            <div slot="title">${title}</div>
-            <div slot="message">${message}</div>
-        </calcite-notice>
-    `;
-}
-
-/**
- * Inizializza la mappa
- */
-function initMap() {
-    console.log('Inizializzazione mappa...');
-    
-    app.map = new Map({
-        basemap: CONFIG.map.basemap
-    });
-
-    app.view = new MapView({
-        container: "mappa-principale",
-        map: app.map,
-        center: CONFIG.map.center,
-        zoom: CONFIG.map.zoom
-    });
-
-    app.graphicsLayer = new GraphicsLayer({
-        title: "Allerte Rischio Idrogeologico"
-    });
-    app.map.add(app.graphicsLayer);
-
-    // Aggiunta Widget
-    const searchWidget = new Search({ 
-        view: app.view, 
-        placeholder: "Cerca località..." 
-    });
-    
-    const basemapToggle = new BasemapToggle({ 
-        view: app.view, 
-        nextBasemap: "arcgis-imagery" 
-    });
-
-    app.view.ui.add(searchWidget, "top-right");
-    app.view.ui.add(basemapToggle, "bottom-right");
-
-    app.view.when(() => {
-        console.log('Mappa pronta');
-        main();
-    });
-}
-
-/**
- * Funzione principale
- */
-async function main() {
-    console.log('Avvio applicazione principale...');
-    
-    try {
-        setupEventListeners();
-        await loadAndDisplayData();
-        closeLoadingModal();
-        
-        updateConnectionStatus(true);
-        
-    } catch (error) {
-        console.error('Errore nel caricamento:', error);
-        closeLoadingModal();
-        updateConnectionStatus(false);
+        console.warn(`${error.message}, uso dati di fallback.`);
+        return getDemoData();
     }
 }
 
-/**
- * Carica e visualizza i dati
- */
-async function loadAndDisplayData() {
-    app.data = await loadAlertsData();
-    
-    if (app.data && app.data.alerts) {
-        displayAlertsOnMap();
-        updateDashboardUI();
-        console.log(`✅ ${app.data.alerts.length} allerte visualizzate`);
-    } else {
-        console.warn('⚠️ Nessun dato da visualizzare');
-    }
-}
+// --- Funzioni di Aggiornamento UI ---
 
-// Visualizza le allerte sulla mappa
-function displayAlertsOnMap() {
-    if (!app.data?.alerts) return;
-
+function displayAlertsOnMap(alerts) {
     app.graphicsLayer.removeAll();
-    
-    const graphics = app.data.alerts.map((alert, index) => {
+    const graphics = alerts.map(alert => {
         const { lon, lat, alert_level, risk_score } = alert;
-        
         if (isNaN(lat) || isNaN(lon)) return null;
 
-        const color = CONFIG.colors[alert_level] || CONFIG.colors.VERDE;
-        const size = risk_score > 70 ? 16 : (risk_score > 50 ? 13 : (risk_score > 30 ? 10 : 8));
-
-        return new Graphic({
-            geometry: new Point({ longitude: lon, latitude: lat }),
-            symbol: new SimpleMarkerSymbol({
-                color: color,
-                size: `${size}px`,
-                outline: { color: [255, 255, 255], width: 1.5 }
-            }),
-            attributes: { ...alert, ObjectID: index },
+        const graphic = new Graphic({
+            geometry: { type: "point", longitude: lon, latitude: lat },
+            symbol: {
+                type: "simple-marker",
+                color: CONSTANTS.COLORS[alert_level] || CONSTANTS.COLORS.VERDE,
+                size: `${getSymbolSize(risk_score)}px`,
+                outline: { color: "white", width: 1.5 }
+            },
+            attributes: alert,
             popupTemplate: new PopupTemplate({
                 title: "{comune} ({provincia})",
-                content: `
-                    <b>Livello:</b> {alert_level}<br>
-                    <b>Rischio:</b> {risk_score}%<br>
-                    <b>Precipitazioni:</b> {precipitation_mm}mm
-                `
+                content: `<b>Livello:</b> {alert_level}<br><b>Rischio:</b> {risk_score}%`
             })
         });
-    }).filter(Boolean);
+        return graphic;
+    }).filter(Boolean); // Rimuove eventuali null (coordinate non valide)
 
     app.graphicsLayer.addMany(graphics);
 }
 
-//aggiorna l'interfaccia della dashboard
-function updateDashboardUI() {
-    if (!app.data) return;
-    
-    const { alerts = [] } = app.data;
+function updateDashboard(alerts) {
     const criticalList = document.querySelector('#lista-aree-critiche');
-    
+    criticalList.innerHTML = '';
+
     const criticalAlerts = alerts
-        .filter(a => ['ROSSO', 'ARANCIONE'].includes(a.alert_level))
+        .filter(a => isCritical(a.alert_level))
         .sort((a, b) => b.risk_score - a.risk_score)
         .slice(0, 5);
 
-    criticalList.innerHTML = '';
-    
     if (criticalAlerts.length === 0) {
-        criticalList.innerHTML = `
-            <calcite-notice open kind="success" icon="check-circle">
-                <div slot="message">Nessuna area critica rilevata.</div>
-            </calcite-notice>
-        `;
+        const notice = document.createElement('calcite-notice');
+        notice.open = true;
+        notice.kind = 'success';
+        notice.icon = 'check-circle';
+        notice.innerHTML = `<div slot="message">Nessuna area critica rilevata.</div>`;
+        criticalList.appendChild(notice);
     } else {
         criticalAlerts.forEach(area => {
             const item = document.createElement('calcite-list-item');
@@ -270,100 +197,44 @@ function updateDashboardUI() {
     }
 }
 
-//setup event listeners per i controlli UI
-function setupEventListeners() {
-    const filterControl = document.querySelector('#filtro-livello');
-    
-    if (filterControl) {
-        filterControl.addEventListener('calciteSegmentedControlChange', (event) => {
-            const filterValue = event.target.value;
-            
-            app.graphicsLayer.graphics.forEach(graphic => {
-                const level = graphic.attributes.alert_level;
-                
-                if (filterValue === 'tutti') {
-                    graphic.visible = true;
-                } else if (filterValue === 'critici') {
-                    graphic.visible = ['ROSSO', 'ARANCIONE'].includes(level);
-                } else {
-                    graphic.visible = (level === filterValue);
-                }
-            });
-        });
-    }
-
-    const btnInfo = document.querySelector('#btn-info');
-    if (btnInfo) {
-        btnInfo.addEventListener('click', () => {
-            alert('Georisk Sentinel Lombardia v2.1 - Sistema ML per Rischio Idrogeologico');
-        });
-    }
+function filterMapGraphics(filterValue) {
+    app.graphicsLayer.graphics.forEach(graphic => {
+        const level = graphic.attributes.alert_level;
+        if (filterValue === CONSTANTS.FILTERS.ALL) {
+            graphic.visible = true;
+        } else if (filterValue === CONSTANTS.FILTERS.CRITICAL) {
+            graphic.visible = isCritical(level);
+        } else {
+            graphic.visible = (level === filterValue);
+        }
+    });
 }
 
-/* Aggiorna lo stato di connessione nel chip - Funzione disabilitata per ora
-function updateConnectionStatus(isConnected) {
-    const chip = document.querySelector('#stato-connessione');
-    if (chip) {
-        if (isConnected) {
-            chip.kind = 'brand';
-            chip.innerText = 'Sistema Connesso';
-        } else {
-            chip.kind = 'warning';
-            chip.innerText = 'Modalità Offline - Dati Demo';
-        }
-    }
-}*/
-
-// Chiude il modal di caricamento
 function closeLoadingModal() {
     const modal = document.querySelector('#modal-caricamento');
+    if (modal) modal.open = false;
+}
+
+function showError(message) {
+    const modal = document.querySelector('#modal-caricamento');
     if (modal) {
-        modal.open = false;
+        modal.querySelector('[slot="header"]').textContent = 'Errore';
+        modal.querySelector('[slot="content"]').innerHTML = `
+            <p style="padding: 1rem;">${message}</p>
+        `;
     }
 }
 
-// Dati demo di fallback
+// --- Dati di Fallback ---
 function getDemoData() {
     return {
-        metadata: {
-            title: "Georisk Sentinel - Demo",
-            timestamp: new Date().toISOString()
-        },
-        summary: {
-            red: 2,
-            orange: 3,
-            yellow: 4,
-            green: 3
-        },
         alerts: [
-            { comune: "Bormio", provincia: "SO", lat: 46.466, lon: 10.370, 
-              alert_level: "ROSSO", risk_score: 85, precipitation_mm: 65 },
-            { comune: "Livigno", provincia: "SO", lat: 46.538, lon: 10.135, 
-              alert_level: "ROSSO", risk_score: 78, precipitation_mm: 58 },
-            { comune: "Bergamo", provincia: "BG", lat: 45.698, lon: 9.677, 
-              alert_level: "ARANCIONE", risk_score: 65, precipitation_mm: 45 },
-            { comune: "Como", provincia: "CO", lat: 45.808, lon: 9.085, 
-              alert_level: "ARANCIONE", risk_score: 58, precipitation_mm: 38 },
-            { comune: "Milano", provincia: "MI", lat: 45.464, lon: 9.190, 
-              alert_level: "VERDE", risk_score: 25, precipitation_mm: 12 }
+            { comune: "Bormio", provincia: "SO", lat: 46.466, lon: 10.370, alert_level: "ROSSO", risk_score: 85 },
+            { comune: "Livigno", provincia: "SO", lat: 46.538, lon: 10.135, alert_level: "ROSSO", risk_score: 78 },
+            { comune: "Como", provincia: "CO", lat: 45.808, lon: 9.085, alert_level: "ARANCIONE", risk_score: 58 },
+            { comune: "Milano", provincia: "MI", lat: 45.464, lon: 9.190, alert_level: "VERDE", risk_score: 25 }
         ]
     };
 }
 
-// Avvia l'applicazione
-async function startApp() {
-    console.log('🔧 Inizializzazione Georisk Sentinel...');
-    
-    const apiKey = await getApiKey();
-    
-    if (apiKey) {
-        esriConfig.apiKey = apiKey;
-        initMap();
-    } else {
-        console.warn('Avvio in modalità demo senza chiave API');
-        // se non c'è l'api, inizializza comunque la mappa con funzionalita limitate
-        initMap();
-    }
-}
-
-startApp();
+initialize();

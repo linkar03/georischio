@@ -52,7 +52,7 @@ try:
         daily: MeteoDailyData
         
 except ImportError:
-    logger.info("Pydantic non disponibile. Validazione dati disabilitata")
+    logger.info("Validazione dati disabilitata")
 
 
 class FeatureEngineering:
@@ -401,7 +401,7 @@ if __name__ == "__main__":
     predictions_df = predictor.predict(grid_points)
     
     # Mostra le 5 aree a maggior rischio
-    print("\n🔥 TOP 5 AREE A MAGGIOR RISCHIO PREVISTO:")
+    print("\nTOP 5 AREE A MAGGIOR RISCHIO PREVISTO:")
     print(predictions_df.sort_values('risk_score', ascending=False).head().to_string())
     
     # salvataggio modello
@@ -415,4 +415,4 @@ if __name__ == "__main__":
     output_path = Path("data/predictions/latest_predictions.geojson")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_gdf.to_file(output_path, driver='GeoJSON')
-    logger.info(f"📁 Predizioni sulla griglia salvate in: {output_path}")
+    logger.info(f"Predizioni sulla griglia salvate in: {output_path}")

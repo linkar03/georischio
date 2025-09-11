@@ -1,90 +1,196 @@
 {
   "metadata": {
-    "title": "Georisk Sentinel Lombardia - ML Predictions",
-    "description": "Sistema di monitoraggio rischio idrogeologico",
-    "timestamp": "2025-09-10T11:44:35.316214",
-    "version": "2.1.0-fixed",
-    "total_alerts": 46
+    "title": "Georisk Sentinel Lombardia - Predizioni ML",
+    "timestamp": "2025-09-11T08:47:46.228602",
+    "version": "2.0.0"
   },
   "summary": {
-    "total": 46,
+    "total": 80,
     "red": 6,
-    "orange": 37,
-    "yellow": 3,
+    "orange": 53,
+    "yellow": 21,
     "green": 0
-  },
-  "statistics": {
-    "avg_precipitation": 47.6,
-    "max_precipitation": 66.4,
-    "avg_risk_score": 59.5,
-    "areas_at_risk": 43
   },
   "alerts": [
     {
       "comune": "Sondrio",
       "provincia": "SO",
-      "lat": 46.15,
-      "lon": 9.55,
+      "lat": 46.6,
+      "lon": 10.15,
       "alert_level": "ROSSO",
       "alert_color": "#ff4757",
-      "risk_score": 83.0,
-      "precipitation_mm": 66.4,
-      "risk_level": "R4"
+      "risk_score": 74.9,
+      "precipitation_mm": 59.9
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.15,
+      "lon": 8.95,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.15,
+      "lon": 9.1,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.15,
+      "lon": 9.25,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 9.85,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 10.0,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.3,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.3,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.0,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.45,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.45,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.45,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 10.15,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 59.2,
+      "precipitation_mm": 47.3
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 10.3,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 59.1,
+      "precipitation_mm": 47.3
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.15,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Lecco",
       "provincia": "LC",
       "lat": 46.15,
       "lon": 9.4,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 82.4,
-      "precipitation_mm": 65.9,
-      "risk_level": "R4"
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
       "lat": 46.15,
-      "lon": 10.3,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 77.7,
-      "precipitation_mm": 62.2,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Lodi",
-      "provincia": "LO",
-      "lat": 45.4,
-      "lon": 9.4,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 74.1,
-      "precipitation_mm": 59.3,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Lodi",
-      "provincia": "LO",
-      "lat": 45.4,
       "lon": 9.55,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 74.1,
-      "precipitation_mm": 59.3,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
-      "lon": 10.0,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 73.6,
-      "precipitation_mm": 58.9,
-      "risk_level": "R4"
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Sondrio",
@@ -93,20 +199,8 @@
       "lon": 9.7,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 67.6,
-      "precipitation_mm": 54.1,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 67.1,
-      "precipitation_mm": 53.7,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Sondrio",
@@ -115,284 +209,318 @@
       "lon": 10.45,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 66.4,
-      "precipitation_mm": 53.2,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 10.15,
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.5,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 65.3,
-      "precipitation_mm": 52.2,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.55,
-      "lon": 9.55,
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.65,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 62.4,
-      "precipitation_mm": 49.9,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.55,
-      "lon": 9.7,
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.8,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 62.4,
-      "precipitation_mm": 49.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.55,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 61.7,
-      "precipitation_mm": 49.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.55,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 61.7,
-      "precipitation_mm": 49.4,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Lecco",
       "provincia": "LC",
-      "lat": 46.0,
+      "lat": 46.3,
+      "lon": 9.4,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
       "lon": 9.55,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 61.3,
-      "precipitation_mm": 49.0,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.7,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
       "lon": 9.7,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 61.1,
-      "precipitation_mm": 48.9,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 9.85,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.15,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.3,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.45,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.45,
+      "lon": 8.8,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Lecco",
       "provincia": "LC",
-      "lat": 46.0,
+      "lat": 46.45,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
       "lon": 9.4,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 60.9,
-      "precipitation_mm": 48.7,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
-      "lat": 46.0,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 60.6,
-      "precipitation_mm": 48.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 60.6,
-      "precipitation_mm": 48.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.7,
+      "lat": 46.45,
       "lon": 9.55,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 60.2,
-      "precipitation_mm": 48.2,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.85,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
       "lon": 9.85,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 60.1,
-      "precipitation_mm": 48.1,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
-      "lat": 45.85,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 59.9,
-      "precipitation_mm": 47.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.0,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 59.5,
-      "precipitation_mm": 47.6,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.85,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 56.9,
-      "precipitation_mm": 45.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 46.0,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 56.9,
-      "precipitation_mm": 45.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 56.2,
-      "precipitation_mm": 44.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.0,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 55.6,
-      "precipitation_mm": 44.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.55,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 55.1,
-      "precipitation_mm": 44.1,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
+      "lat": 46.45,
       "lon": 10.15,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 55.1,
-      "precipitation_mm": 44.1,
-      "risk_level": "R3"
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
     },
     {
-      "comune": "Lodi",
-      "provincia": "LO",
-      "lat": 45.4,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
+      "lon": 10.3,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.6,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.6,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 9.4,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
       "lon": 9.7,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 55.0,
-      "precipitation_mm": 44.0,
-      "risk_level": "R3"
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
-      "lat": 46.0,
-      "lon": 10.15,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 54.9,
-      "precipitation_mm": 43.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Cremona",
-      "provincia": "CR",
-      "lat": 45.4,
+      "lat": 46.6,
       "lon": 9.85,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 54.5,
-      "precipitation_mm": 43.6,
-      "risk_level": "R3"
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
-      "lon": 10.3,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 10.0,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 54.2,
-      "precipitation_mm": 43.4,
-      "risk_level": "R3"
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.85,
-      "lon": 10.15,
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.6,
+      "lon": 9.1,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
       "risk_score": 54.0,
-      "precipitation_mm": 43.2,
-      "risk_level": "R3"
+      "precipitation_mm": 43.2
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.6,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.0,
+      "precipitation_mm": 43.2
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.5,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.8,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 45.85,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 45.85,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
     },
     {
       "comune": "Lecco",
@@ -401,9 +529,8 @@
       "lon": 9.4,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 52.3,
-      "precipitation_mm": 41.9,
-      "risk_level": "R3"
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
     },
     {
       "comune": "Lecco",
@@ -412,9 +539,8 @@
       "lon": 9.55,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 52.3,
-      "precipitation_mm": 41.8,
-      "risk_level": "R3"
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
     },
     {
       "comune": "Bergamo",
@@ -423,75 +549,138 @@
       "lon": 9.7,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 52.3,
-      "precipitation_mm": 41.8,
-      "risk_level": "R3"
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.0,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.0,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.0,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
       "lat": 46.0,
-      "lon": 9.7,
+      "lon": 9.85,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Bergamo",
+      "provincia": "BG",
+      "lat": 45.85,
+      "lon": 9.85,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
       "risk_score": 52.0,
-      "precipitation_mm": 41.6,
-      "risk_level": "R3"
+      "precipitation_mm": 41.6
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
-      "lon": 10.15,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 51.0,
-      "precipitation_mm": 40.8,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
       "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 51.0,
-      "precipitation_mm": 40.8,
-      "risk_level": "R3"
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 49.4,
+      "precipitation_mm": 39.6
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
       "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 51.0,
-      "precipitation_mm": 40.8,
-      "risk_level": "R3"
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 49.4,
+      "precipitation_mm": 39.6
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.85,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 50.5,
-      "precipitation_mm": 40.4,
-      "risk_level": "R3"
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 10.6,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 49.4,
+      "precipitation_mm": 39.6
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
+      "comune": "Varese",
+      "provincia": "VA",
       "lat": 45.7,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 50.3,
-      "precipitation_mm": 40.2,
-      "risk_level": "R3"
+      "lon": 8.5,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 47.3,
+      "precipitation_mm": 37.8
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.7,
+      "lon": 8.65,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 47.3,
+      "precipitation_mm": 37.8
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 45.7,
+      "lon": 9.4,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 47.3,
+      "precipitation_mm": 37.8
+    },
+    {
+      "comune": "Bergamo",
+      "provincia": "BG",
+      "lat": 45.7,
+      "lon": 9.55,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 47.3,
+      "precipitation_mm": 37.8
+    },
+    {
+      "comune": "Bergamo",
+      "provincia": "BG",
+      "lat": 45.7,
+      "lon": 9.7,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 47.3,
+      "precipitation_mm": 37.8
     },
     {
       "comune": "Bergamo",
@@ -500,9 +689,48 @@
       "lon": 9.85,
       "alert_level": "GIALLO",
       "alert_color": "#ffd32c",
-      "risk_score": 49.2,
-      "precipitation_mm": 39.4,
-      "risk_level": "R2"
+      "risk_score": 47.3,
+      "precipitation_mm": 37.8
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.6,
+      "lon": 8.5,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 44.3,
+      "precipitation_mm": 35.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.6,
+      "lon": 8.8,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 44.0,
+      "precipitation_mm": 35.2
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 9.55,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 44.0,
+      "precipitation_mm": 35.2
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.15,
+      "lon": 8.5,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 42.8,
+      "precipitation_mm": 34.2
     },
     {
       "comune": "Varese",
@@ -511,495 +739,670 @@
       "lon": 8.8,
       "alert_level": "GIALLO",
       "alert_color": "#ffd32c",
-      "risk_score": 49.1,
-      "precipitation_mm": 39.2,
-      "risk_level": "R2"
+      "risk_score": 42.8,
+      "precipitation_mm": 34.2
     },
     {
-      "comune": "Monza",
-      "provincia": "MB",
-      "lat": 45.55,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 45.85,
+      "lon": 10.0,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
+    },
+    {
+      "comune": "Brescia",
+      "provincia": "BS",
+      "lat": 45.85,
+      "lon": 10.3,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.0,
+      "lon": 8.8,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.0,
       "lon": 9.4,
       "alert_level": "GIALLO",
       "alert_color": "#ffd32c",
-      "risk_score": 42.8,
-      "precipitation_mm": 34.2,
-      "risk_level": "R2"
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.0,
+      "lon": 9.55,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.0,
+      "lon": 9.7,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.0,
+      "lon": 10.0,
+      "alert_level": "GIALLO",
+      "alert_color": "#ffd32c",
+      "risk_score": 40.6,
+      "precipitation_mm": 32.5
     }
   ],
   "critical_areas": [
     {
-      "comune": "Lodi",
-      "provincia": "LO",
-      "lat": 45.4,
-      "lon": 9.4,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 74.1,
-      "precipitation_mm": 59.3,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Lodi",
-      "provincia": "LO",
-      "lat": 45.4,
-      "lon": 9.55,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 74.1,
-      "precipitation_mm": 59.3,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Lodi",
-      "provincia": "LO",
-      "lat": 45.4,
-      "lon": 9.7,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 55.0,
-      "precipitation_mm": 44.0,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Cremona",
-      "provincia": "CR",
-      "lat": 45.4,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 54.5,
-      "precipitation_mm": 43.6,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
-      "lon": 10.0,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 73.6,
-      "precipitation_mm": 58.9,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
       "lon": 10.15,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 51.0,
-      "precipitation_mm": 40.8,
-      "risk_level": "R3"
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 74.9,
+      "precipitation_mm": 59.9
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 51.0,
-      "precipitation_mm": 40.8,
-      "risk_level": "R3"
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.15,
+      "lon": 8.95,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.4,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 51.0,
-      "precipitation_mm": 40.8,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.55,
-      "lon": 9.55,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 62.4,
-      "precipitation_mm": 49.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.55,
-      "lon": 9.7,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 62.4,
-      "precipitation_mm": 49.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.55,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 61.7,
-      "precipitation_mm": 49.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.55,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 61.7,
-      "precipitation_mm": 49.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.55,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 55.1,
-      "precipitation_mm": 44.1,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.7,
-      "lon": 9.55,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 60.2,
-      "precipitation_mm": 48.2,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.7,
-      "lon": 9.7,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 61.1,
-      "precipitation_mm": 48.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 50.3,
-      "precipitation_mm": 40.2,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
-      "lon": 10.15,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 55.1,
-      "precipitation_mm": 44.1,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 54.2,
-      "precipitation_mm": 43.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.7,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 56.2,
-      "precipitation_mm": 44.9,
-      "risk_level": "R3"
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.15,
+      "lon": 9.1,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
     },
     {
       "comune": "Lecco",
       "provincia": "LC",
-      "lat": 45.85,
-      "lon": 9.4,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 52.3,
-      "precipitation_mm": 41.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Lecco",
-      "provincia": "LC",
-      "lat": 45.85,
-      "lon": 9.55,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 52.3,
-      "precipitation_mm": 41.8,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.85,
-      "lon": 9.7,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 52.3,
-      "precipitation_mm": 41.8,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Bergamo",
-      "provincia": "BG",
-      "lat": 45.85,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 60.1,
-      "precipitation_mm": 48.1,
-      "risk_level": "R3"
+      "lat": 46.15,
+      "lon": 9.25,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
-      "lat": 45.85,
+      "lat": 46.15,
+      "lon": 9.85,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 10.0,
+      "alert_level": "ROSSO",
+      "alert_color": "#ff4757",
+      "risk_score": 72.1,
+      "precipitation_mm": 57.7
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.3,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.3,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
       "lon": 10.0,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 59.9,
-      "precipitation_mm": 47.9,
-      "risk_level": "R3"
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
     },
     {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.85,
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.45,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.45,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.45,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 70.0,
+      "precipitation_mm": 56.0
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
       "lon": 10.15,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 59.2,
+      "precipitation_mm": 47.3
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 10.3,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 59.1,
+      "precipitation_mm": 47.3
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.15,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.15,
+      "lon": 9.4,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 9.55,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 9.7,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.15,
+      "lon": 10.45,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.5,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.3,
+      "lon": 8.8,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.3,
+      "lon": 9.4,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 9.55,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 9.7,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 9.85,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.15,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.3,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.3,
+      "lon": 10.45,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.45,
+      "lon": 8.8,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 46.45,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
+      "lon": 9.4,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
+      "lon": 9.55,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
+      "lon": 9.85,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
+      "lon": 10.15,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.45,
+      "lon": 10.3,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 56.8,
+      "precipitation_mm": 45.4
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.6,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.6,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 9.4,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 9.7,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 9.85,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Sondrio",
+      "provincia": "SO",
+      "lat": 46.6,
+      "lon": 10.0,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.4,
+      "precipitation_mm": 43.5
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.6,
+      "lon": 9.1,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
       "risk_score": 54.0,
-      "precipitation_mm": 43.2,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.85,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 50.5,
-      "precipitation_mm": 40.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 45.85,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 56.9,
-      "precipitation_mm": 45.5,
-      "risk_level": "R3"
+      "precipitation_mm": 43.2
     },
     {
       "comune": "Lecco",
       "provincia": "LC",
-      "lat": 46.0,
+      "lat": 46.6,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 54.0,
+      "precipitation_mm": 43.2
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.5,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.65,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.8,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 45.85,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 45.85,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 45.85,
+      "lon": 9.25,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 45.85,
       "lon": 9.4,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 60.9,
-      "precipitation_mm": 48.7,
-      "risk_level": "R3"
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Lecco",
+      "provincia": "LC",
+      "lat": 45.85,
+      "lon": 9.55,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Bergamo",
+      "provincia": "BG",
+      "lat": 45.85,
+      "lon": 9.7,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Varese",
+      "provincia": "VA",
+      "lat": 46.0,
+      "lon": 8.95,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Como",
+      "provincia": "CO",
+      "lat": 46.0,
+      "lon": 9.1,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
     },
     {
       "comune": "Lecco",
       "provincia": "LC",
       "lat": 46.0,
-      "lon": 9.55,
+      "lon": 9.25,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
-      "risk_score": 61.3,
-      "precipitation_mm": 49.0,
-      "risk_level": "R3"
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
     },
     {
       "comune": "Sondrio",
       "provincia": "SO",
       "lat": 46.0,
-      "lon": 9.7,
+      "lon": 9.85,
+      "alert_level": "ARANCIONE",
+      "alert_color": "#ff9f43",
+      "risk_score": 53.2,
+      "precipitation_mm": 42.6
+    },
+    {
+      "comune": "Bergamo",
+      "provincia": "BG",
+      "lat": 45.85,
+      "lon": 9.85,
       "alert_level": "ARANCIONE",
       "alert_color": "#ff9f43",
       "risk_score": 52.0,
-      "precipitation_mm": 41.6,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.0,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 59.5,
-      "precipitation_mm": 47.6,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.0,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 60.6,
-      "precipitation_mm": 48.4,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.0,
-      "lon": 10.15,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 54.9,
-      "precipitation_mm": 43.9,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.0,
-      "lon": 10.3,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 55.6,
-      "precipitation_mm": 44.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Brescia",
-      "provincia": "BS",
-      "lat": 46.0,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 56.9,
-      "precipitation_mm": 45.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Lecco",
-      "provincia": "LC",
-      "lat": 46.15,
-      "lon": 9.4,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 82.4,
-      "precipitation_mm": 65.9,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 9.55,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 83.0,
-      "precipitation_mm": 66.4,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 9.7,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 67.6,
-      "precipitation_mm": 54.1,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 9.85,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 60.6,
-      "precipitation_mm": 48.5,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 10.0,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 67.1,
-      "precipitation_mm": 53.7,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 10.15,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 65.3,
-      "precipitation_mm": 52.2,
-      "risk_level": "R3"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 10.3,
-      "alert_level": "ROSSO",
-      "alert_color": "#ff4757",
-      "risk_score": 77.7,
-      "precipitation_mm": 62.2,
-      "risk_level": "R4"
-    },
-    {
-      "comune": "Sondrio",
-      "provincia": "SO",
-      "lat": 46.15,
-      "lon": 10.45,
-      "alert_level": "ARANCIONE",
-      "alert_color": "#ff9f43",
-      "risk_score": 66.4,
-      "precipitation_mm": 53.2,
-      "risk_level": "R3"
+      "precipitation_mm": 41.6
     }
   ]
 }

@@ -56,8 +56,8 @@ python backend/server.py
 backend/
   ├── pipeline.py       # Training ML e predizioni
   ├── server.py         # API Flask
-  ├── ml_predittore.py  # Modello XGBoost
-  └── dati.py          # Generazione dati sintetici
+  ├── ml_forecast.py  # Modello XGBoost
+  └── data_ingestion.py          # Generazione dati sintetici
 
 frontend/
   ├── index.html       # UI

@@ -49,10 +49,6 @@ models/*.pkl
 models/*.joblib
 models/*.h5
 
-# Reports generati
-reports/*.html
-reports/*.pdf
-
 # files temporanei
 *.tmp
 *.bak
@@ -61,10 +57,6 @@ reports/*.pdf
 
 # Docker
 *.pid
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
 
 # Testing
 htmlcov/

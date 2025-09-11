@@ -2,7 +2,6 @@
 pandas
 numpy
 scipy
-jinja2
 
 # librerie geospaziali
 geopandas
